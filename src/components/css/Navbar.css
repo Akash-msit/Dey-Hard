@@ -18,6 +18,7 @@
     list-style: none;
     display: flex;
     gap: 2rem;
+    transition: max-height 0.3s ease-out;
   }
   
   .nav-links a {
@@ -48,5 +49,46 @@
   .nav-links a:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column; /* Stack logo and nav-links vertically */
+      align-items: flex-start;
+      padding: 1rem; /* Reduce padding for smaller screens */
+    }
+  
+    .nav-links {
+      flex-direction: column; /* Stack links vertically */
+      gap: 1rem;
+      max-height: 0; /* Hide links by default */
+      overflow: hidden;
+    }
+  
+    .nav-links.active {
+      max-height: 200px; /* Show links when active */
+    }
+  
+    .hamburger {
+      display: block; /* Show hamburger icon */
+      cursor: pointer;
+      font-size: 2rem;
+      color: #fcdc4d; /* Bright yellow for the icon */
+    }
+  
+    .hamburger:hover {
+      color: #fff; /* Change color on hover */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .logo {
+      font-size: 1.5rem; /* Smaller logo size for very small screens */
+    }
+  
+    .nav-links a {
+      font-size: 1rem; /* Smaller font size for links */
+    }
   }
   
