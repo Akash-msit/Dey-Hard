@@ -1,0 +1,96 @@
+.contact {
+    padding: 3rem 2rem;
+    background-color: #f8f9fa;
+    color: #333;
+    font-family: Arial, sans-serif;
+  }
+  
+  .contact-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .contact-header h1 {
+    font-size: 2.8rem;
+    color: #fcdc4d; /* Yellow color */
+  }
+  
+  .contact-header p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-top: 1rem;
+  }
+  
+  .contact-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .contact-form {
+    background-color: #333; /* Dark gray background */
+    color: #fff;
+    border-radius: 10px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-field {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-field label {
+    font-size: 1.1rem;
+    color: #fcdc4d; /* Yellow color */
+  }
+  
+  .form-field input,
+  .form-field textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-top: 0.5rem;
+    border: 2px solid #fcdc4d; /* Yellow border */
+    border-radius: 5px;
+    background-color: #444; /* Darker gray input */
+    color: #fff;
+    font-size: 1rem;
+  }
+  
+  .form-field input:focus,
+  .form-field textarea:focus {
+    outline: none;
+    border-color: #fcdc4d;
+  }
+  
+  .submit-btn {
+    width: 100%;
+    padding: 1rem;
+    background-color: #fcdc4d; /* Yellow button */
+    color: #333;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-btn:hover {
+    background-color: #e1c82b; /* Slightly darker yellow */
+  }
+  
+  .submit-btn:active {
+    background-color: #d1b21a; /* Even darker yellow */
+  }
+  
+  @media (max-width: 768px) {
+    .contact-header h1 {
+      font-size: 2.2rem;
+    }
+  
+    .contact-form-container {
+      padding: 1rem;
+    }
+  }
+  

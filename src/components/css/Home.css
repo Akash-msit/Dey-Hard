@@ -1,0 +1,53 @@
+.home {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, #2e2e2e, #4a4a4a); /* Futuristic gradient background */
+    color: #fff; /* White text for better contrast */
+    min-height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .home h1 {
+    font-size: 3rem;
+    color: #fcdc4d; /* Bright yellow for emphasis */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Futuristic text shadow */
+    margin-bottom: 1rem;
+    letter-spacing: 1px; /* Subtle spacing for modern look */
+  }
+  
+  .home p {
+    font-size: 1.3rem;
+    color: #d9d9d9; /* Soft gray for secondary text */
+    margin-top: 1rem;
+    max-width: 700px; /* Limit text width for better readability */
+    line-height: 1.6; /* Improve text spacing */
+  }
+  
+  .home button {
+    margin-top: 2rem;
+    padding: 0.8rem 2.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #2e2e2e; /* Dark gray text on yellow button */
+    background-color: #fcdc4d; /* Bright yellow background */
+    border: none;
+    border-radius: 30px; /* Rounded button for a modern style */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Add depth with shadow */
+    cursor: pointer;
+    transition: all 0.3s ease-in-out; /* Smooth hover effect */
+  }
+  
+  .home button:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.6); /* Enhanced shadow for hover */
+    background-color: #ffdd57; /* Slightly brighter yellow on hover */
+  }
+  
+  .home button:active {
+    transform: translateY(2px); /* Press effect */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Reduced shadow on press */
+    background-color: #f8c429; /* Darker yellow for active state */
+  }

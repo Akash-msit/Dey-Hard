@@ -1,0 +1,52 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #2e2e2e, #a2a0a0); /* Futuristic gray gradient */
+    color: #fff; /* White text for contrast */
+    padding: 1rem 2rem;
+  }
+  
+  .logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fcdc4d; /* Bright yellow for the logo */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Text shadow for a glowing effect */
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .nav-links a {
+    color: #fff; /* White text for links */
+    font-size: 1.1rem;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 5px;
+  }
+  
+  .nav-links a:hover {
+    color: #fcdc4d; /* Change link color to yellow on hover */
+  }
+  
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #fcdc4d; /* Yellow underline effect */
+    left: 0;
+    bottom: 0;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .nav-links a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  

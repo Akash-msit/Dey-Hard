@@ -1,0 +1,114 @@
+.about {
+    padding: 2rem;
+    background-color: #2e2e2e; /* Dark gray background */
+    color: #fff; /* White text for contrast */
+    text-align: center;
+  }
+  
+  .about-header {
+    margin-bottom: 2rem;
+  }
+  
+  .about-header h1 {
+    font-size: 2.5rem;
+    color: #fcdc4d; /* Bright yellow for the heading */
+  }
+  
+  .about-header p {
+    font-size: 1.2rem;
+    color: #d9d9d9; /* Soft gray for secondary text */
+  }
+  
+  .owner-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #444; /* Darker gray background for owner section */
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 2rem;
+    flex-direction: column; /* Stack the elements vertically */
+    text-align: center; /* Center text */
+  }
+  
+  .owner-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    border: 5px solid #fcdc4d; /* Yellow border around the photo */
+  }
+  
+  .owner-details {
+    text-align: center;
+  }
+  
+  .owner-details h2 {
+    font-size: 1.8rem;
+    color: #fcdc4d; /* Yellow color for the owner's name */
+  }
+  
+  .owner-details p {
+    font-size: 1.1rem;
+    color: #d9d9d9; /* Light gray for description text */
+  }
+  
+  .phone-number {
+    font-size: 1.2rem;
+    color: #fcdc4d; /* Yellow color for the phone number */
+    margin-top: 0.5rem;
+  }
+  
+  .phone-number strong {
+    color: #fff; /* White color for the label */
+  }
+  
+  /* Shop Address Section */
+  .shop-address {
+    margin-bottom: 2rem;
+    color: #fff; /* White text for the address section */
+  }
+  
+  .location {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+  }
+  
+  .location-icon {
+    font-size: 1.8rem;
+    margin-right: 0.5rem;
+    color: #fcdc4d; /* Yellow for the location icon */
+  }
+  
+  .address {
+    color: #d9d9d9; /* Light gray for address text */
+  }
+  
+  /* Shop Info Section */
+  .shop-info {
+    font-size: 1.2rem;
+    color: #d9d9d9; /* Light gray for the general shop info */
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .shop-info p {
+    line-height: 1.6; /* Better readability */
+    color: #d9d9d9; /* Soft gray for text */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .owner-info {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .owner-photo {
+      margin-bottom: 1r
+    }
+}
