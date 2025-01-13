@@ -1,27 +1,63 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./css/Products.css";
 
-
-function Products() {
+const Products = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
 
-  const products = {
+  // Product data with specific variants for cement
+  const [products, setProducts] = useState({
     cement: [
-      { name: "Ambuja", price: "Rs. 410/Bag", image: "/images/ambuja.jpg" },
-      { name: "Ultratech", price: "Rs. 390/Bag", image: "/images/ultratech.jpg" },
-      { name: "ACC", price: "Rs. 400/Bag", image: "/images/acc.jpg" },
+      {
+        name: "Ultratech",
+        image: "/images/ultratech.jpg",
+        variants: [
+          { type: "Normal Ultratech" },
+          { type: "Premium Ultratech" },
+        ],
+      },
+      {
+        name: "ACC",
+        image: "/images/acc.jpg",
+        variants: [
+          { type: "Normal ACC" },
+          { type: "ACC F2R" },
+        ],
+      },
+      {
+        name: "Ambuja",
+        image: "/images/ambuja.jpg",
+      },
     ],
     ironRod: [
-      { name: "Shyam Steel", price: "$500/ton", image: "/images/shyam_steel.jpg" },
-      { name: "Bangal Super", price: "$480/ton", image: "/images/bangal_super.jpg" },
-      { name: "Tata Tiscon", price: "$550/ton", image: "/images/tata_tiscon.jpg" },
+      { name: "Shyam Steel", image: "/images/shyam_steel.jpg" },
+      { name: "Bangal Super", image: "/images/bangal_super.jpg" },
     ],
     bricks: [
-      { name: "Red Clay Bricks", price: "$300/1000", image: "/images/red_clay_bricks.jpg" },
-      { name: "Fly Ash Bricks", price: "$250/1000", image: "/images/fly_ash_bricks.jpg" },
-      { name: "Hollow Blocks", price: "$350/1000", image: "/images/hollow_blocks.jpg" },
+      { name: "Red Clay Bricks", image: "/images/red_clay_bricks.jpg" },
+      { name: "Fly Ash Bricks", image: "/images/fly_ash_bricks.jpg" },
     ],
-  };
+  });
+
+  // Simulating price updates for specific products
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setProducts((prevProducts) => ({
+        ...prevProducts,
+        cement: prevProducts.cement.map((product) =>
+          product.variants
+            ? {
+                ...product,
+                variants: product.variants.map((variant) => ({
+                  ...variant,
+                })),
+              }
+            : product
+        ),
+      }));
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   const handleCategoryClick = (category) => {
     setSelectedCategory(category === selectedCategory ? null : category);
@@ -31,13 +67,15 @@ function Products() {
     <div className="products">
       <h1>Our Products</h1>
       <div className="categories">
-        <ul>
-          {Object.keys(products).map((category) => (
-            <li key={category} onClick={() => handleCategoryClick(category)}>
-              <button className="category-btn">{category}</button>
-            </li>
-          ))}
-        </ul>
+        {Object.keys(products).map((category) => (
+          <button
+            key={category}
+            className={`category-btn ${selectedCategory === category ? "active" : ""}`}
+            onClick={() => handleCategoryClick(category)}
+          >
+            {category.charAt(0).toUpperCase() + category.slice(1)}
+          </button>
+        ))}
       </div>
 
       {selectedCategory && (
@@ -47,12 +85,20 @@ function Products() {
             {products[selectedCategory].map((product, index) => (
               <div className="product-card" key={index}>
                 <div className="product-image-frame">
-                  <img src={product.image} alt={product.name} className="product-image" />
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="product-image"
+                  />
                 </div>
-                <div className="product-info">
-                  <h3>{product.name}</h3>
-                  <p>{product.price}</p>
-                </div>
+                <h3>{product.name}</h3>
+                {product.variants ? (
+                  <ul>
+                    {product.variants.map((variant, idx) => (
+                      <li key={idx}>{variant.type}</li>
+                    ))}
+                  </ul>
+                ) : null}
               </div>
             ))}
           </div>
@@ -60,6 +106,6 @@ function Products() {
       )}
     </div>
   );
-}
+};
 
 export default Products;
